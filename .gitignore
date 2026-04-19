@@ -1,0 +1,32 @@
+# Node modules
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# Environment files (IMPORTANT)
+.env
+backend/.env
+frontend/.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build files
+frontend/build/
+frontend/.next/
+dist/
+
+# Database temp files
+*.sql
+
+# VS Code
+.vscode/
+
+# Optional
+coverage/
