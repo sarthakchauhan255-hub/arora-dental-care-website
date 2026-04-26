@@ -18,9 +18,21 @@ const BookingPage = () => {
   });
 
   useEffect(() => {
-    api.get('/services').then(r => setServices(r.data.services)).catch(()=>{});
-    api.get('/doctors').then(r => setDoctors(r.data.doctors)).catch(()=>{});
-    window.scrollTo(0,0);
+  api.get('/services')
+    .then(r => {
+      console.log('SERVICES:', r.data);
+      setServices(r.data.services || []);
+    })
+    .catch(err => console.error('Services error:', err));
+
+  api.get('/doctors')
+    .then(r => {
+      console.log('DOCTORS:', r.data);
+      setDoctors(r.data.doctors || []);
+    })
+    .catch(err => console.error('Doctors error:', err));
+
+  window.scrollTo(0,0);
   }, []);
 
   useEffect(() => {
