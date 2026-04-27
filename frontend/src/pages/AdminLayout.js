@@ -22,9 +22,9 @@ const AdminLayout = () => {
      const mobile = window.innerWidth <=768;
      setIsMobile(mobile);
 
-     if(!mobile){
-      setSidebarOpen(true);
-      }
+     if(window.innerWidth <= 768){
+     setSidebarOpen(false);
+     }
     };
    window.addEventListener('resize', handleResize);
    return ()=> window.removeEventListener('resize', handleResize);
@@ -36,7 +36,9 @@ const AdminLayout = () => {
     <div style={{ display:'flex', minHeight:'100vh', background:'var(--slate-50)' }}>
       {/* Sidebar */}
       <aside style={{
-         width:260,
+         width: isMobile
+          ? 260
+          : (sidebarOpen ? 260 : 78),
          background:'var(--slate-900)',
          color:'white',
          display:'flex',
@@ -51,12 +53,13 @@ const AdminLayout = () => {
 
          height:'100vh',
          zIndex:1000,
-         transition:'left .3s ease'
+         transition:'left .3s ease, width .3s ease'
         }}>
         {/* Logo */}
         <div style={{ padding:'20px 16px', borderBottom:'1px solid rgba(255,255,255,0.1)', display:'flex', alignItems:'center', gap:10, minHeight:72 }}>
           <div style={{ width:40, height:40, background:'linear-gradient(135deg,#0ea5e9,#0284c7)', borderRadius:10, display:'flex', alignItems:'center', justifyContent:'center', fontSize:18, flexShrink:0 }}>🦷</div>
-          {sidebarOpen && <div style={{ overflow:'hidden', whiteSpace:'nowrap' }}>
+            {((!isMobile && sidebarOpen) || isMobile) && (
+            <div style={{overflow:'hidden', whiteSpace:'nowrap'}}>
             <div style={{ fontFamily:'var(--font-display)', fontSize:14, fontWeight:700, color:'white' }}>Aurora Dental</div>
             <div style={{ fontSize:10, color:'rgba(255,255,255,0.5)' }}>Admin Panel</div>
           </div>}
@@ -73,7 +76,7 @@ const AdminLayout = () => {
              if(isMobile) setSidebarOpen(false);
              }}
               style={({ isActive }) => ({
-                display:'flex', alignItems:'center', gap:12, padding:'11px 12px',
+                display:'flex', alignItems:'center',justifyContent: sidebarOpen || isMobile ? 'flex-start' : 'center', gap:12, padding:'11px 12px',
                 borderRadius:'var(--radius-md)', marginBottom:4,
                 background: isActive ? 'rgba(14,165,233,0.15)' : 'transparent',
                 color: isActive ? '#38bdf8' : 'rgba(255,255,255,0.6)',
@@ -84,7 +87,7 @@ const AdminLayout = () => {
               onMouseEnter={e=>{ if(!e.currentTarget.classList.contains('active')) e.currentTarget.style.background='rgba(255,255,255,0.05)'; e.currentTarget.style.color='white'; }}
               onMouseLeave={e=>{ e.currentTarget.style.background=''; e.currentTarget.style.color=''; }}>
               <span style={{ fontSize:18, flexShrink:0 }}>{icon}</span>
-              <span>{label}</span>
+              {(sidebarOpen || isMobile) && <span>{label}</span>}
             </NavLink>
           ))}
         </nav>
@@ -100,7 +103,7 @@ const AdminLayout = () => {
             onMouseEnter={e=>{e.currentTarget.style.color='white';e.currentTarget.style.background='rgba(255,255,255,0.05)';}}
             onMouseLeave={e=>{e.currentTarget.style.color='';e.currentTarget.style.background='';}}>
             <span style={{ fontSize:16, flexShrink:0 }}>🌐</span>
-            <span>View Website</span>
+            {(sidebarOpen || isMobile) && <span>View Website</span>}
           </Link>
           <button
            onClick={()=>{
@@ -110,7 +113,7 @@ const AdminLayout = () => {
             onMouseEnter={e=>{e.currentTarget.style.color='#f87171';e.currentTarget.style.background='rgba(248,113,113,0.1)';}}
             onMouseLeave={e=>{e.currentTarget.style.color='';e.currentTarget.style.background='';}}>
             <span style={{ fontSize:16, flexShrink:0 }}>🚪</span>
-            <span>Logout</span>
+            {(sidebarOpen || isMobile) && <span>Logout</span>}
           </button>
         </div>
       </aside>
