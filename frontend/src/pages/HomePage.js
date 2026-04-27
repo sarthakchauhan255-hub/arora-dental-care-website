@@ -95,7 +95,7 @@ const HomePage = () => {
           <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:64, alignItems:'center' }}>
             {/* Text */}
             <div>
-              <div className="section-tag" style={{ marginBottom:20 }}>🏆 San Francisco's #1 Implant Clinic</div>
+              <div className="section-tag" style={{ marginBottom:20 }}>🏆 Solan's #1 Implant Clinic</div>
               <h1 style={{ fontSize:'clamp(36px,5vw,60px)', lineHeight:1.1, marginBottom:20, color:'var(--slate-900)' }}>
                 Your Perfect Smile<br />
                 <span style={{ color:'var(--sky-600)' }}>Starts Here</span>

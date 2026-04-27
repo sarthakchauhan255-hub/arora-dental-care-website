@@ -124,7 +124,7 @@ const ServicesPage = () => {
                     key={svc.id}
                     style={{
                       display: 'grid',
-                      gridTemplateColumns: '1fr 1fr',
+                      gridTemplateColumns: 'repeat(auto-fit,minmax(320px,1fr))',
                       gap: 56,
                       alignItems: 'center',
                       direction: i % 2 === 0 ? 'ltr' : 'rtl',
