@@ -134,7 +134,7 @@ const HomePage = () => {
               </div>
               {/* Floating card */}
               <div style={{
-                position:'absolute', bottom:24, left:-24,
+                position:'absolute', bottom:24, left:12,
                 background:'white', borderRadius:'var(--radius-lg)',
                 padding:'16px 20px', boxShadow:'var(--shadow-xl)',
                 display:'flex', alignItems:'center', gap:12,
@@ -146,7 +146,7 @@ const HomePage = () => {
                 </div>
               </div>
               <div style={{
-                position:'absolute', top:24, right:-16,
+                position:'absolute', top:24, right:0,
                 background:'linear-gradient(135deg,#0ea5e9,#0284c7)', borderRadius:'var(--radius-lg)',
                 padding:'12px 16px', boxShadow:'var(--shadow-blue)', color:'white',
               }}>
@@ -168,7 +168,7 @@ const HomePage = () => {
               <div style={{ borderRadius:'var(--radius-xl)', overflow:'hidden', boxShadow:'var(--shadow-xl)' }}>
                 <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=560&h=480&fit=crop" alt="Our clinic" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
               </div>
-              <div style={{ position:'absolute', top:24, right:-20, background:'var(--sky-600)', color:'white', borderRadius:'var(--radius-lg)', padding:'20px', boxShadow:'var(--shadow-blue)', textAlign:'center' }}>
+              <div style={{ position:'absolute', top:24, right:0, background:'var(--sky-600)', color:'white', borderRadius:'var(--radius-lg)', padding:'20px', boxShadow:'var(--shadow-blue)', textAlign:'center' }}>
                 <div style={{ fontSize:32, fontWeight:700, fontFamily:'var(--font-display)' }}>15+</div>
                 <div style={{ fontSize:12, opacity:0.9 }}>Years of<br/>Excellence</div>
               </div>
@@ -275,18 +275,32 @@ const HomePage = () => {
           </div>
           <div className="grid-3">
             {[
-              { before:'https://images.unsplash.com/photo-1588776813677-77aef5595b83?w=300&h=200&fit=crop', after:'https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=300&h=200&fit=crop', label:'Full Arch Implants' },
-              { before:'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=300&h=200&fit=crop', after:'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=300&h=200&fit=crop', label:'Smile Makeover' },
-              { before:'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=300&h=200&fit=crop', after:'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=300&h=200&fit=crop', label:'Teeth Whitening' },
+              { before:'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=80', after:'https://images.unsplash.com/photo-1588776814546-ec7e6d6f7f1f?auto=format&fit=crop&w=900&q=80', label:'Full Arch Implants' },
+              { before:'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80', after:'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=80', label:'Smile Makeover' },
+              { before:'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=900&q=80', after:'https://images.unsplash.com/photo-1588776814546-ec7e6d6f7f1f?auto=format&fit=crop&w=900&q=80', label:'Teeth Whitening' },
             ].map(({ before, after, label }, i) => (
               <div key={i} className="card" style={{ overflow:'hidden' }}>
                 <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr' }}>
                   <div style={{ position:'relative' }}>
-                    <img src={before} alt="Before" style={{ width:'100%', height:160, objectFit:'cover' }}/>
+                    <img
+                      src={before}
+                      alt="Before"
+                      style={{ width:'100%', height:160, objectFit:'cover' }}
+                      onError={(e)=>{
+                       e.target.src="https://via.placeholder.com/600x400?text=Before+Treatment";
+                      }}
+                    />
                     <div style={{ position:'absolute', top:8, left:8, background:'rgba(0,0,0,0.6)', color:'white', borderRadius:4, padding:'3px 8px', fontSize:11, fontWeight:600 }}>BEFORE</div>
                   </div>
                   <div style={{ position:'relative' }}>
-                    <img src={after} alt="After" style={{ width:'100%', height:160, objectFit:'cover' }}/>
+                    <img
+                     src={after}
+                     alt="After"
+                     style={{ width:'100%', height:160, objectFit:'cover' }}
+                     onError={(e)=>{
+                       e.target.src="https://via.placeholder.com/600x400?text=After+Treatment";
+                      }}
+                    />
                     <div style={{ position:'absolute', top:8, right:8, background:'var(--sky-600)', color:'white', borderRadius:4, padding:'3px 8px', fontSize:11, fontWeight:600 }}>AFTER</div>
                   </div>
                 </div>

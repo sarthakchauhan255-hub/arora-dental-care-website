@@ -31,7 +31,7 @@ const AboutPage = () => {
       {/* Mission */}
       <section className="section" style={{ background:'white' }}>
         <div className="container">
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:64, alignItems:'center' }}>
+          <div style={{ display:'grid', repeat(auto-fit,minmax(320px,1fr))', gap:64, alignItems:'center' }}>
             <div>
               <div className="section-tag">Our Mission</div>
               <h2 style={{ fontFamily:'var(--font-display)', fontSize:36, marginBottom:20 }}>Transforming Lives Through Beautiful Smiles</h2>
