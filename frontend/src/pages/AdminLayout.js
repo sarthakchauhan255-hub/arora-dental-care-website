@@ -62,7 +62,7 @@ const AdminLayout = () => {
             <div style={{overflow:'hidden', whiteSpace:'nowrap'}}>
             <div style={{ fontFamily:'var(--font-display)', fontSize:14, fontWeight:700, color:'white' }}>Aurora Dental</div>
             <div style={{ fontSize:10, color:'rgba(255,255,255,0.5)' }}>Admin Panel</div>
-          </div>}
+          </div>)}
         </div>
 
         {/* Nav links */}
