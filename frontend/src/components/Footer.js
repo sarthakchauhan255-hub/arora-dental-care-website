@@ -55,7 +55,7 @@ const Footer = () => (
         <div>
           <h4 style={{ color: 'white', fontFamily: 'var(--font-display)', marginBottom: 20, fontSize: 18 }}>Contact Us</h4>
           {[
-            { icon: '📍', text: '123 Smile Avenue, Suite 200\nSan Francisco, CA 94102' },
+            { icon: '📍', text: '123 Smile Avenue, Suite 200\nSolan, 173229' },
             { icon: '📞', text: '+1 (415) 555-0123' },
             { icon: '✉️', text: 'hello@auroradental.com' },
             { icon: '🕒', text: 'Mon–Fri: 9AM – 6PM\nSat–Sun: Closed' },

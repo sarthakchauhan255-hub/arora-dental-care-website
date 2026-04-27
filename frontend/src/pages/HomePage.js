@@ -275,7 +275,7 @@ const HomePage = () => {
           </div>
           <div className="grid-3">
             {[
-              { before:'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=80', after:'https://images.unsplash.com/photo-1588776814546-ec7e6d6f7f1f?auto=format&fit=crop&w=900&q=80', label:'Full Arch Implants' },
+              { before:'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=80', after:'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=80', label:'Full Arch Implants' },
               { before:'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80', after:'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=900&q=80', label:'Smile Makeover' },
               { before:'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=900&q=80', after:'https://images.unsplash.com/photo-1588776814546-ec7e6d6f7f1f?auto=format&fit=crop&w=900&q=80', label:'Teeth Whitening' },
             ].map(({ before, after, label }, i) => (
