@@ -69,7 +69,23 @@ const Footer = () => (
       </div>
 
       <div style={{ borderTop: '1px solid var(--slate-800)', padding: '24px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
-        <p style={{ fontSize: 13, color: 'var(--slate-500)' }}>© {new Date().getFullYear()} Aurora Dental Care. All rights reserved.</p>
+        <p style={{ fontSize: 13, color: 'var(--slate-500)' }}>
+           © {new Date().getFullYear()} Aurora Dental Care. All rights reserved. •{" "}
+           <a
+             href="https://github.com/sarthakchauhan255-hub"
+             target="_blank"
+             rel="noreferrer"
+             style={{
+              color: 'inherit',
+              textDecoration: 'none',
+              fontWeight: 500
+             }}
+             onMouseEnter={e => e.currentTarget.style.opacity='0.8'}
+             onMouseLeave={e => e.currentTarget.style.opacity='1'}
+            >
+               Designed & Developed by Sarthak Chauhan
+            </a>
+        </p>
         <div style={{ display: 'flex', gap: 20 }}>
           {['Privacy Policy', 'Terms of Service', 'Sitemap'].map(l => (
             <a key={l} href="#" style={{ fontSize: 13, color: 'var(--slate-500)', transition: 'color 0.2s' }}
