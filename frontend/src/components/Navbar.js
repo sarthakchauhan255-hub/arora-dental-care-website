@@ -34,7 +34,7 @@ const Navbar = () => {
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding:isMobile ? '0 16px' : '0 24px', height: 72,overflow:'hidden' }}>
         {/* Logo */}
         <Link to="/"
-        style={{ display: 'flex', alignItems: 'center', gap: 10,minWidth:0,flex:'1',maxWidth:'75%' }}>
+        style={{ display: 'flex', alignItems: 'center', gap: 10,minWidth:0,flex:'1',maxWidth:'70%' }}>
           <div style={{
             width: isMobile ? 42 : 40, height: isMobile ? 42 : 40,flexShrink:0,
             background: 'linear-gradient(135deg, #0ea5e9, #0284c7)',
@@ -83,12 +83,12 @@ const Navbar = () => {
         {/* Hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          style={{ display: 'none', background: 'none', border: 'none', padding: 10, marginLeft:12,marginTop: isMobile ? 18 : 0,flexShrink:0, color: 'var(--slate-700)' }}
+          style={{ display: 'none', background: 'none', border: 'none', padding: 10, marginLeft:'auto',marginTop:0,position:'static',flexShrink:0, color: 'var(--slate-700)' }}
           className="hamburger"
           aria-label="Menu">
-          <div style={{ width: 22, height: 2, background: 'currentColor', marginBottom: 5, transition: 'all 0.3s', transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }} />
-          <div style={{ width: 22, height: 2, background: 'currentColor', marginBottom: 5, opacity: menuOpen ? 0 : 1 }} />
-          <div style={{ width: 22, height: 2, background: 'currentColor', transform: menuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none', transition: 'all 0.3s' }} />
+          <div style={{ width: 24, height: 2, background: 'currentColor', marginBottom: 5, transition: 'all 0.3s', transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }} />
+          <div style={{ width: 24, height: 2, background: 'currentColor', marginBottom: 5, opacity: menuOpen ? 0 : 1 }} />
+          <div style={{ width: 24, height: 2, background: 'currentColor', transform: menuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none', transition: 'all 0.3s' }} />
         </button>
       </div>
 
