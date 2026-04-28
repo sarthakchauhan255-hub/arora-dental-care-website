@@ -96,11 +96,11 @@ const HomePage = () => {
           <div style={{ display:'grid', gridTemplateColumns:isMobile ? '1fr' : '1fr 1fr', gap:isMobile ? 34 : 64, alignItems:'center' }}>
             {/* Text */}
             <div>
-              <div className="section-tag" style={{marginTop:isMobile ? 35 : 0, marginBottom:20 }}>🏆 Solan's #1 Implant Clinic</div>
+              <div className="section-tag" style={{marginTop:isMobile ? 90 : 0, marginBottom:20,display:'inline-flex' }}>🏆 Solan's #1 Implant Clinic</div>
               <h1 style={{
                fontSize:isMobile ? '54px' : 'clamp(36px,5vw,60px)',
                lineHeight:isMobile ? '.95' : '1.1',
-               marginTop:isMobile ? 20 : 0,
+               marginTop:isMobile ? 10 : 0,
                marginBottom:20,
                maxWidth:isMobile ? 300 : 'none',
                color:'var(--slate-900)'
