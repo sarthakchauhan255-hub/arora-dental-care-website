@@ -31,10 +31,10 @@ const Navbar = () => {
       boxShadow: scrolled ? 'var(--shadow-sm)' : 'none',
       transition: 'all 0.3s ease',
     }}>
-      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding:isMobile ? '0 16px' : '0 24px', height: 72,overflow:'hidden' }}>
+      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding:isMobile ? '0 16px' : '0 24px', height: 72,overflow:'visible' }}>
         {/* Logo */}
         <Link to="/"
-        style={{ display: 'flex', alignItems: 'center', gap: 10,minWidth:0,flex:'1',maxWidth:'70%' }}>
+        style={{ display: 'flex', alignItems: 'center', gap: 10,minWidth:0,flex:'1' }}>
           <div style={{
             width: isMobile ? 42 : 40, height: isMobile ? 42 : 40,flexShrink:0,
             background: 'linear-gradient(135deg, #0ea5e9, #0284c7)',
