@@ -35,6 +35,7 @@ const HomePage = () => {
   const [reviewForm, setReviewForm] = useState({ patient_name:'', rating:5, comment:'' });
   const [reviewMsg, setReviewMsg] = useState(null);
   const [submitting, setSubmitting] = useState(false);
+  const isMobile = window.innerWidth <= 768;
 
   const heroRef     = useRef(null);
   const aboutRef    = useReveal();
@@ -91,14 +92,24 @@ const HomePage = () => {
           }}/>
         ))}
 
-        <div ref={heroRef} className="container" style={{ opacity:0, transition:'opacity 0.8s ease, transform 0.8s ease', transform:'translateY(0)', paddingTop:100, paddingBottom:60 }}>
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:64, alignItems:'center' }}>
+        <div ref={heroRef} className="container" style={{ opacity:0, transition:'opacity 0.8s ease, transform 0.8s ease', transform:'translateY(0)', paddingTop: isMobile ? 150 : 100, paddingBottom:60 }}>
+          <div style={{ display:'grid', gridTemplateColumns:isMobile ? '1fr' : '1fr 1fr', gap:isMobile ? 34 : 64, alignItems:'center' }}>
             {/* Text */}
             <div>
-              <div className="section-tag" style={{ marginBottom:20 }}>🏆 Solan's #1 Implant Clinic</div>
-              <h1 style={{ fontSize:'clamp(36px,5vw,60px)', lineHeight:1.1, marginBottom:20, color:'var(--slate-900)' }}>
-                Your Perfect Smile<br />
-                <span style={{ color:'var(--sky-600)' }}>Starts Here</span>
+              <div className="section-tag" style={{marginTop:isMobile ? 35 : 0, marginBottom:20 }}>🏆 Solan's #1 Implant Clinic</div>
+              <h1 style={{
+               fontSize:isMobile ? '54px' : 'clamp(36px,5vw,60px)',
+               lineHeight:isMobile ? '.95' : '1.1',
+               marginTop:isMobile ? 20 : 0,
+               marginBottom:20,
+               maxWidth:isMobile ? 300 : 'none',
+               color:'var(--slate-900)'
+               }}>
+               Your Perfect<br/>
+               Smile<br/>
+               <span style={{color:'var(--sky-600)'}}>
+               Starts Here
+               </span>
               </h1>
               <p style={{ fontSize:18, color:'var(--slate-600)', lineHeight:1.8, marginBottom:36, maxWidth:480 }}>
                 Healthy Smile, Brighter Tomorrow. World-class dental implants, cosmetic dentistry, and complete smile restoration — all under one roof.
@@ -163,7 +174,7 @@ const HomePage = () => {
       {/* ── ABOUT ─────────────────────────────────────────────── */}
       <section className="section" style={{ background:'white' }}>
         <div className="container">
-          <div ref={aboutRef} className="reveal" style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:64, alignItems:'center' }}>
+          <div ref={aboutRef} className="reveal" style={{ display:'grid', gridTemplateColumns:isMobile ? '1fr' : '1fr 1fr', gap:isMobile ? 34 : 64, alignItems:'center' }}>
             <div style={{ position:'relative' }}>
               <div style={{ borderRadius:'var(--radius-xl)', overflow:'hidden', boxShadow:'var(--shadow-xl)' }}>
                 <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=560&h=480&fit=crop" alt="Our clinic" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
