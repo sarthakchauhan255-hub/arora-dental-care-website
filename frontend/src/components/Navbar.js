@@ -83,7 +83,7 @@ const Navbar = () => {
         {/* Hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          style={{ display: 'none', background: 'none', border: 'none', padding: 10, marginLeft:12,marginTop: isMobile ? 34 : 0,alignSelf:'flex-start',flexShrink:0, color: 'var(--slate-700)' }}
+          style={{ display: 'none', background: 'none', border: 'none', padding: 10, marginLeft:12,marginTop: isMobile ? 18 : 0,flexShrink:0, color: 'var(--slate-700)' }}
           className="hamburger"
           aria-label="Menu">
           <div style={{ width: 22, height: 2, background: 'currentColor', marginBottom: 5, transition: 'all 0.3s', transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }} />
