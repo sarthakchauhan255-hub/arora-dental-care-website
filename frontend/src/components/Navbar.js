@@ -5,6 +5,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const isMobile = window.innerWidth <= 768;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -30,20 +31,21 @@ const Navbar = () => {
       boxShadow: scrolled ? 'var(--shadow-sm)' : 'none',
       transition: 'all 0.3s ease',
     }}>
-      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 24px', height: 72 }}>
+      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding:isMobile ? '0 16px' : '0 24px', height: 72,overflow:'hidden' }}>
         {/* Logo */}
-        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+        <Link to="/"
+        style={{ display: 'flex', alignItems: 'center', gap: 10,minWidth:0,flex:'1',maxWidth:'75%' }}>
           <div style={{
-            width: 40, height: 40,
+            width: isMobile ? 42 : 40, height: isMobile ? 42 : 40,flexShrink:0,
             background: 'linear-gradient(135deg, #0ea5e9, #0284c7)',
             borderRadius: 10,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             fontSize: 20, boxShadow: 'var(--shadow-blue)',
           }}>🦷</div>
-          <div>
+          <div style={{overflow:'hidden',minWidth:0}}>
             <div style={{
               fontFamily: 'var(--font-display)', fontWeight: 700,
-              fontSize: 18, color: scrolled ? 'var(--slate-900)' : 'var(--slate-900)',
+              fontSize: isMobile ? 16 : 18, whiteSpace:'nowrap',overflow:'hidden',textOverflow:'ellipsis', color: scrolled ? 'var(--slate-900)' : 'var(--slate-900)',
               letterSpacing: '-0.3px',
             }}>Aurora Dental</div>
             <div style={{ fontSize: 10, color: 'var(--slate-400)', letterSpacing: '0.5px', fontWeight: 500 }}>CARE</div>
@@ -81,7 +83,7 @@ const Navbar = () => {
         {/* Hamburger */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          style={{ display: 'none', background: 'none', border: 'none', padding: 8, color: 'var(--slate-700)' }}
+          style={{ display: 'none', background: 'none', border: 'none', padding: 10, marginLeft:12,flexShrink:0, color: 'var(--slate-700)' }}
           className="hamburger"
           aria-label="Menu">
           <div style={{ width: 22, height: 2, background: 'currentColor', marginBottom: 5, transition: 'all 0.3s', transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none' }} />
