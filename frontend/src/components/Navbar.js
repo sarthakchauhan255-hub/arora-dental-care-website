@@ -40,7 +40,8 @@ const Navbar = () => {
         height:'72px',
         padding:'0 16px',
         overflow:'visible',
-        flexWrap:'nowrap'
+        flexWrap:'nowrap',
+        position:'relative'
         }}
         >
 
@@ -107,9 +108,12 @@ const Navbar = () => {
        border:'none',
        padding:0,
        marginLeft:'auto',
+       marginRight:'0',
        flexShrink:0,
-       position:'relative',
-       right:'0'
+       position:'absolute',
+       right:'16px',
+       top:'50%',
+       transform:'translateY(-50%)'
        }}
        >
        <div style={{width:26,height:3,background:'#475569',marginBottom:5}}/>
