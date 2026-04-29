@@ -107,13 +107,11 @@ const Navbar = () => {
        background:'transparent',
        border:'none',
        padding:0,
-       marginLeft:'auto',
-       marginRight:'0',
        flexShrink:0,
-       position:'absolute',
-       right:'16px',
-       top:'50%',
-       transform:'translateY(-50%)'
+       position:'fixed',
+       top:'28px',
+       right:'18px',
+       zIndex:1101
        }}
        >
        <div style={{width:26,height:3,background:'#475569',marginBottom:5}}/>
