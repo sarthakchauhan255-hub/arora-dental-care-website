@@ -107,11 +107,8 @@ const Navbar = () => {
        background:'transparent',
        border:'none',
        padding:0,
+       marginLeft:'auto',
        flexShrink:0,
-       position:'fixed',
-       top:'28px',
-       right:'18px',
-       zIndex:1101
        }}
        >
        <div style={{width:26,height:3,background:'#475569',marginBottom:5}}/>
@@ -173,8 +170,17 @@ const Navbar = () => {
        .hamburger{
        display:block !important;
        margin-left:auto !important;
-       position:relative;
-       right:0;
+       order:99 !important;
+        }
+
+       nav .container{
+       display:flex !important;
+       justify-content:space-between !important;
+       align-items:center !important;
+       }
+
+       nav .container > .hamburger{
+       margin-left:auto !important;
        }
 
        }
