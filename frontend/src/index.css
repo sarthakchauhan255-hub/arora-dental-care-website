@@ -329,11 +329,6 @@ width:100% !important;
 max-width:100% !important;
 }
 
-/* kill horizontal overflow */
-*{
-max-width:100%;
-}
-
 /* ALL two-column layouts collapse */
 .grid-2,
 .grid-3,

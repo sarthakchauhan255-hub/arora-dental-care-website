@@ -44,26 +44,27 @@ const Navbar = () => {
         }}
         >
 
-       <Link
+      <Link
        to="/"
        style={{
        display:'flex',
        alignItems:'center',
        gap:'12px',
-       flex:'0 1 auto',
-       minWidth:0
+       textDecoration:'none',
+       flexShrink:0
        }}
        >
+
        <div style={{
        width:42,
        height:42,
-       flexShrink:0,
        background:'linear-gradient(135deg,#0ea5e9,#0284c7)',
        borderRadius:10,
        display:'flex',
        alignItems:'center',
        justifyContent:'center',
-       fontSize:20
+       fontSize:20,
+       boxShadow:'var(--shadow-blue)'
        }}>
        🦷
        </div>
@@ -71,34 +72,30 @@ const Navbar = () => {
        <div style={{
        display:'flex',
        flexDirection:'column',
-       lineHeight:1.1
+       lineHeight:1.05
        }}>
        <div style={{
-       fontSize: isMobile ? 16 : 18,
+       fontFamily:'var(--font-display)',
        fontWeight:700,
+       fontSize:isMobile ? 17 : 18,
+       color:'var(--slate-900)',
        whiteSpace:'nowrap'
        }}>
        Aurora Dental
        </div>
 
        <div style={{
-       fontSize:10,
+       fontSize:'10px',
        letterSpacing:'1px',
-       color:'#94a3b8'
+       color:'var(--slate-400)',
+       marginTop:'2px'
        }}>
        CARE
        </div>
        </div>
-       </Link>
+      </Link>
 
 
-       <div className="desktop-nav">
-       {/* leave existing desktop links */}
-       </div>
-
-       <div className="desktop-nav">
-       {/* leave existing buttons */}
-       </div>
 
 
        <button
@@ -110,7 +107,9 @@ const Navbar = () => {
        border:'none',
        padding:0,
        marginLeft:'auto',
-       flexShrink:0
+       flexShrink:0,
+       position:'relative',
+       right:'0'
        }}
        >
        <div style={{width:26,height:3,background:'#475569',marginBottom:5}}/>
@@ -148,11 +147,35 @@ const Navbar = () => {
       )}
 
       <style>{`
-        @media (max-width: 768px) {
-          .desktop-nav { display: none !important; }
-          .hamburger { display: block !important; }
-          .container{flex-wrap:nowrap !important;}
-        }
+       @media (max-width:768px){
+
+       .desktop-nav{
+       display:none !important;
+       }
+
+       nav .container{
+       display:flex !important;
+       justify-content:space-between !important;
+       align-items:center !important;
+       padding:0 16px !important;
+       flex-wrap:nowrap !important;
+       }
+
+       nav a:first-child{
+       display:flex !important;
+       align-items:center !important;
+       gap:12px !important;
+       flex:0 0 auto !important;
+       }
+
+       .hamburger{
+       display:block !important;
+       margin-left:auto !important;
+       position:relative;
+       right:0;
+       }
+
+       }
       `}</style>
     </nav>
   );
