@@ -39,9 +39,8 @@ const Navbar = () => {
         justifyContent:'space-between',
         height:'72px',
         padding:'0 16px',
-        overflow:'visible',
-        flexWrap:'nowrap',
-        position:'relative'
+        position:'relative',
+        overflow:'visible'
         }}
         >
 
@@ -100,20 +99,45 @@ const Navbar = () => {
 
 
        <button
-       className="hamburger"
-       onClick={()=>setMenuOpen(!menuOpen)}
-       style={{
-       display:'none',
-       background:'transparent',
-       border:'none',
-       padding:0,
-       marginLeft:'auto',
-       flexShrink:0,
-       }}
-       >
-       <div style={{width:26,height:3,background:'#475569',marginBottom:5}}/>
-       <div style={{width:26,height:3,background:'#475569',marginBottom:5}}/>
-       <div style={{width:26,height:3,background:'#475569'}}/>
+         onClick={()=>setMenuOpen(!menuOpen)}
+         className="hamburger"
+         aria-label="Menu"
+         style={{
+         display:'none',
+         background:'transparent',
+         border:'none',
+         padding:0,
+
+         /* THIS fixes it permanently */
+         position:'absolute',
+         right:'16px',
+         top:'50%',
+         transform:'translateY(-50%)',
+         zIndex:1100
+         }}
+         >
+         <div style={{
+          width:30,
+          height:3,
+          background:'#475569',
+          marginBottom:6,
+          borderRadius:3
+          }}/>
+
+         <div style={{
+         width:30,
+         height:3,
+         background:'#475569',
+         marginBottom:6,
+         borderRadius:3
+         }}/>
+
+         <div style={{
+          width:30,
+          height:3,
+          background:'#475569',
+          borderRadius:3
+          }}/>
        </button>
 
        </div>
@@ -152,35 +176,19 @@ const Navbar = () => {
        display:none !important;
        }
 
-       nav .container{
-       display:flex !important;
-       justify-content:space-between !important;
-       align-items:center !important;
-       padding:0 16px !important;
-       flex-wrap:nowrap !important;
-       }
-
-       nav a:first-child{
-       display:flex !important;
-       align-items:center !important;
-       gap:12px !important;
-       flex:0 0 auto !important;
-       }
-
        .hamburger{
        display:block !important;
-       margin-left:auto !important;
-       order:99 !important;
-        }
-
-       nav .container{
-       display:flex !important;
-       justify-content:space-between !important;
-       align-items:center !important;
        }
 
-       nav .container > .hamburger{
-       margin-left:auto !important;
+        /* keep logo from stretching */
+       nav a:first-child{
+       max-width:220px;
+       flex-shrink:0;
+        }
+
+       /* reserve room so hamburger never overlaps text */
+       nav .container{
+       padding-right:72px !important;
        }
 
        }
