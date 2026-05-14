@@ -36,7 +36,6 @@ const Navbar = () => {
         style={{
         display:'flex',
         alignItems:'center',
-        justifyContent:'space-between',
         height:'72px',
         padding:'0 16px',
         position:'relative',
@@ -47,11 +46,14 @@ const Navbar = () => {
       <Link
        to="/"
        style={{
-       display:'flex',
+       display:'inline-flex',
        alignItems:'center',
        gap:'12px',
        textDecoration:'none',
-       flexShrink:0
+       flexShrink:0,
+       width:'auto',
+       maxWidth:'fit-content',
+       flex:'0 0 auto'
        }}
        >
 
@@ -171,24 +173,36 @@ const Navbar = () => {
 
       <style>{`
        @media (max-width:768px){
-
        .desktop-nav{
-       display:none !important;
-       }
-
-       .hamburger{
-       display:block !important;
-       }
-
-        /* keep logo from stretching */
-       nav a:first-child{
-       max-width:220px;
-       flex-shrink:0;
+         display:none !important;
         }
 
-       /* reserve room so hamburger never overlaps text */
+       .hamburger{
+         display:block !important;
+         position:absolute !important;
+         right:16px !important;
+         top:50% !important;
+         transform:translateY(-50%) !important;
+         z-index:2000 !important;
+        }
+
+       /* navbar layout */
        nav .container{
-       padding-right:72px !important;
+         display:flex !important;
+         align-items:center !important;
+         justify-content:space-between !important;
+         position:relative !important;
+         padding:0 16px !important;
+         padding-right:72px !important;
+         height:72px !important;
+        }
+
+       /* VERY IMPORTANT FIX */
+       nav a:first-child{
+       display:inline-flex !important;
+       width:auto !important;
+       max-width:fit-content !important;
+       flex:0 0 auto !important;
        }
 
        }
